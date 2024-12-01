@@ -1,0 +1,5 @@
+WebApp
+Version7
+DB_USER="admain"
+DB_PASS="admin123"
+TOKEN="qoeriu4578g7y35hy8vfy78345hvfd7y85whfgs"
