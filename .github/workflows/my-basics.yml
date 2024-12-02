@@ -4,6 +4,9 @@
 # Copyleft (c) by Irina Cher 2024
 #----------------------------------------
 name: My-GitHubActions_Basics
+env:
+  APPLICATION_NAME   : "MyFlask"
+  DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{github.sha }}"
 
 on: 
   push:
@@ -16,13 +19,22 @@ jobs:
 
     steps:
     - name: Print Hello Message in Testing
-      run: echo "Hello world! from testing"
+      run : echo "Hello world! from testing"
+
+    - name: execute few commands
+      run : |
+        echo "Hello message1"
+        echo "Hello message2"
+        echo "Application name: ${{ env.APPLICATION_NAME }}"
 
 
   my_deploy:
     runs-on: ubuntu-latest
-    needs: [my_testing]
+    needs  : [my_testing]
 
     steps:
     - name: Print Hello Message in Deploy
-      run: echo "Hello world! from Deploy job"
+      run : echo "Hello world! from Deploy job"
+
+    - name: Printing Deployment pacage 
+      run : echo "Deploy pacage name is ${{ env.DEPLOY_PACKAGE_NAME }}"
