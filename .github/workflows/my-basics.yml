@@ -3,7 +3,7 @@
 #
 # Copyleft (c) by Irina Cher 2024
 #----------------------------------------
-name: My-GitHubActions_Basics
+name: My-GitHubActions-Basics
 env:
   APPLICATION_NAME   : "MyFlask"
   DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{github.sha }}"
